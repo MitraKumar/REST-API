@@ -35,9 +35,7 @@ class FileHandler {
 
             for (let i = 0; i < json_data.length; i++) {
                 if (json_data[i].id === req_data.id) {
-                    json_data[i].id = req_data.id;
-                    json_data[i].website = req_data.website;
-                    json_data[i].password = req_data.password;
+                    json_data[i] = req_data;
                 }
             }
 

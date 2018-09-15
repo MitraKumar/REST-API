@@ -10,22 +10,22 @@ Here no actual database is used the data is simply stored in json file.
 2) Run `npm install`
 3) Run `npm start`
 
-> Open [localhost:3000/passwords](https://localhost:3000/passwords) to see the passwords\
-> Open [localhost:3000/users](https://localhost:3000/passwords) to see the users
+> Open [localhost:3000/api/passwords](localhost:3000/api/passwords) to see the passwords\
+> Open [localhost:3000/api/users](localhost:3000/api/passwords) to see the users
 
 ## Routes
 
-> `GET` Request to `/passwords` will show all the passwords.\
-> `GET` Request to `/users` will show all the users.
+> `GET` Request to `/api/passwords` will show all the passwords.\
+> `GET` Request to `/api/users` will show all the users.
 
-> `POST` Request to `/passwords` will save a password.\
-> `POST` Request to `/users` will save a user.
+> `POST` Request to `/api/passwords` will save a password.\
+> `POST` Request to `/api/users` will save a user.
 
-> `PUT` Request to `/passwords` will update a password.\
-> `PUT` Request to `/users` will update a user..
+> `PUT` Request to `/api/passwords` will update a password.\
+> `PUT` Request to `/api/users` will update a user..
 
-> `DELETE` Request to `/passwords` will delete a password.\
-> `DELETE` Request to `/users` will delete a user.
+> `DELETE` Request to `/api/passwords` will delete a password.\
+> `DELETE` Request to `/api/users` will delete a user.
 
 ## Data format
 
@@ -41,6 +41,7 @@ Here no actual database is used the data is simply stored in json file.
 > ### User
 ```
 {
+  id:
   name:
   password:
 }

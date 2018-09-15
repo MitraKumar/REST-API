@@ -14,12 +14,24 @@ router.post('/passwords', (req, res) => {
     Password.create(req, res)
 })
 
+router.post('/users', (req, res) => {
+    User.create(req, res)
+})
+
 router.put('/passwords', (req, res) => {
     Password.update(req, res)
 })
 
+router.put('/users', (req, res) => {
+    User.update(req, res)
+})
+
 router.delete('/passwords', (req, res) => {
     Password.delete(req, res)
+})
+
+router.delete('/users', (req, res) => {
+    User.delete(req, res)
 })
 
 module.exports = router
