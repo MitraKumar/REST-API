@@ -1,5 +1,5 @@
 # REST-API
-A simple implementation of REST Api with CRUD functionality./
+A simple implementation of REST Api with CRUD functionality.\
 Here no actual database is used the data is simply stored in json file.
 
 ## Requirments
