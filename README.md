@@ -10,8 +10,8 @@ Here no actual database is used the data is simply stored in json file.
 2) Run `npm install`
 3) Run `npm start`
 
-> Open [localhost:3000/api/passwords](localhost:3000/api/passwords) to see the passwords\
-> Open [localhost:3000/api/users](localhost:3000/api/passwords) to see the users
+> Open [localhost:3000/api/passwords](http://localhost:3000/api/passwords) to see the passwords\
+> Open [localhost:3000/api/users](http://localhost:3000/api/passwords) to see the users
 
 ## Routes
 
