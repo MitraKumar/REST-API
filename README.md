@@ -7,7 +7,7 @@ Here no actual database is used the data is simply stored in json file.
 
 ## Installation
 1) Run `git clone https://github.com/MitraKumar/REST-API.git`
-2) Run `npm installation`
+2) Run `npm install`
 3) Run `npm start`
 
 > Open [localhost:3000/passwords](https://localhost:3000/passwords) to see the passwords\
