@@ -26,23 +26,3 @@ Here no actual database is used the data is simply stored in json file.
 
 > `DELETE` Request to `/api/passwords` will delete a password.\
 > `DELETE` Request to `/api/users` will delete a user.
-
-## Data format
-
-> ### Password
-```
-{
-  id: 
-  website:
-  password:
-}
-```
-
-> ### User
-```
-{
-  id:
-  name:
-  password:
-}
-```

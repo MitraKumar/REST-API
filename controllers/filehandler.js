@@ -1,76 +1,45 @@
-const fs = require('fs')
+const Database = require('../db/database')
 
 class FileHandler {
     constructor(url) {
         this.fileURL = url;
+        this.db = new Database(url)
+
+        this.get = this.get.bind(this)
+        this.create = this.create.bind(this)
+        this.update = this.update.bind(this)
+        this.delete = this.delete.bind(this)
     }
 
-    get(res) {
-        fs.readFile(this.fileURL, 'utf8', (err, data) => {
-            if (err) throw err
-            res.json(JSON.parse(data))
-        })
+    getAll(req, res) {
+        this.db.findAll()
+            .then(data => res.json(data))
+    }
+
+    get(req, res) {
+        this.db.findOne(req.params._id)
+            .then(data => res.json(data))
     }
 
     create(req, res) {
-        fs.readFile(this.fileURL, 'utf8', (err, data) => {
-            if (err) throw err
-            let json_data = JSON.parse(data)
-            json_data.push(req.body)
-            let string_data = JSON.stringify(json_data)
-            fs.writeFile(this.fileURL, string_data, (err, data) => {
-                if (err) throw err;
-                res.json({
-                    'message': 'saved succesfully'
-                })
-            })
-        })
+        this.db.push(req.body)
+            .then(_ => res.json({
+                'message': 'saved succesfully'
+            }))
     }
 
     update(req, res) {
-        fs.readFile(this.fileURL, 'utf8', (err, data) => {
-            if (err) throw err
-            let json_data = JSON.parse(data)
-            let req_data = req.body
-
-            for (let i = 0; i < json_data.length; i++) {
-                if (json_data[i].id === req_data.id) {
-                    json_data[i] = req_data;
-                }
-            }
-
-            let string_data = JSON.stringify(json_data)
-
-            fs.writeFile(this.fileURL, string_data, (err, data) => {
-                if (err) throw err;
-                res.json({
-                    'message': 'saved succesfully'
-                })
-            })
-        })
+        this.db.update(req.params._id, req.body)
+            .then(_ => res.json({
+                'message': 'saved succesfully'
+            }))
     }
 
     delete(req, res) {
-        fs.readFile(this.fileURL, 'utf8', (err, data) => {
-            if (err) throw err
-            let json_data = JSON.parse(data)
-            let req_data = req.body
-
-            for (let i = 0; i < json_data.length; i++) {
-                if (json_data[i].id === req_data.id) {
-                    json_data.splice(i, 1)
-                }
-            }
-
-            let string_data = JSON.stringify(json_data)
-
-            fs.writeFile(this.fileURL, string_data, (err, data) => {
-                if (err) throw err;
-                res.json({
-                    'message': 'Deleted succesfully'
-                })
-            })
-        })
+        this.db.delete(req.params._id)
+            .then(_ => res.json({
+                'message': 'Deleted succesfully'
+            }))
     }
 }
 

@@ -2,13 +2,13 @@ const { FileHandler } = require('./filehandler')
 
 class Password extends FileHandler {
     constructor() {
-        super('./db/password.json');
+        super('password');
     }
 }
 
 class User extends FileHandler {
     constructor() {
-        super('./db/user.json');
+        super('user');
     }
 }
 

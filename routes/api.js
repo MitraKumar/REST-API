@@ -1,37 +1,16 @@
 const router = require('express').Router();
 const { Password, User } = require('../controllers/controller')
 
+router.get('/passwords', Password.getAll)
+router.get('/passwords/:_id', Password.get)
+router.post('/passwords', Password.create)
+router.put('/passwords/:_id', Password.update)
+router.delete('/passwords?:_id', Password.delete)
 
-router.get('/passwords', (req, res) => {
-    Password.get(res)
-})
-
-router.get('/users', (req, res) => {
-    User.get(res)
-})
-
-router.post('/passwords', (req, res) => {
-    Password.create(req, res)
-})
-
-router.post('/users', (req, res) => {
-    User.create(req, res)
-})
-
-router.put('/passwords', (req, res) => {
-    Password.update(req, res)
-})
-
-router.put('/users', (req, res) => {
-    User.update(req, res)
-})
-
-router.delete('/passwords', (req, res) => {
-    Password.delete(req, res)
-})
-
-router.delete('/users', (req, res) => {
-    User.delete(req, res)
-})
+router.get('/users', User.getAll)
+router.get('/users/:_id', User.get)
+router.post('/users', User.create)
+router.put('/users/:_id', User.update)
+router.delete('/users/:_id', User.delete)
 
 module.exports = router
